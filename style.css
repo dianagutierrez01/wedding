@@ -1,0 +1,298 @@
+:root {
+  /* font sizes */
+  --h1: 40px;
+  --h2: 32px;
+  --h3: 20px;
+  --body: 16px;
+  --small: 14px;
+
+  --line: 1.6;
+}
+
+/* setting reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--body);
+  line-height: var(--line);
+  color: #2f2f2f;
+  background: #f8f7f4;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* header starts here */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky; top: 0;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+/* name */
+.top-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* nav centered under name */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: var(--small);
+  color: #2f2f2f;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+/* hero starts here */
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #7a8468;
+}
+
+.hero-content {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.hero-logo {
+  width: 480px;
+  height: auto;
+  /*margin-bottom: 16px;*/
+}
+
+.date {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--h2);
+}
+
+.location {
+  color: #ffffff;
+}
+
+.countdown {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  
+}
+
+/* buttons start here */
+.rsvp-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: white;
+  color: #7a8468;
+  text-decoration: none;
+  font-size: var(--small);
+}
+
+/* sections start here */
+section {
+  padding: 32px 0;
+}
+
+/* welcome starts here */
+.intro {
+  background: var(--white);
+  text-align: center;
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--h2);
+  margin-bottom: 16px;
+}
+
+.intro p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #6f6f6f;
+}
+
+/* sched starts here */
+#schedule {
+  text-align: center;
+}
+
+#schedule h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--h2);
+  margin-bottom: 48px;
+}
+
+.timeline {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: start;
+  text-align: left;
+}
+
+.time {
+  font-weight: 500;
+  color: #7a8468;
+}
+
+.event h3 {
+  font-size: var(--h3);
+  margin-bottom: 4px;
+}
+
+/* q&a starts here*/
+#qa {
+  background: var(--white);
+  text-align: center;
+}
+
+#qa h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--h2);
+  margin-bottom: 48px;
+}
+
+.qa-grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.qa-item h3 {
+  font-size: var(--h3);
+  margin-bottom: 8px;
+}
+
+/* rsvp starts here */
+#rsvp-section {
+  background: #7a8468;
+  color: white;
+  text-align: center;
+}
+
+.container-rsvp-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border: white 5em;
+}
+
+.rsvp-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--h2);
+}
+
+.rsvp-btn.large {
+  background: white;
+  color: #7a8468;
+  padding: 14px 36px;
+}
+
+
+/* footer starts here */
+footer {
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+footer p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+
+/*gallery starts here */
+.polaroid-gallery {
+  position: relative;
+  max-width: 620px;
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid {
+  background: white;
+  padding: 12px 12px 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  text-align: center;
+  width: 700px;
+}
+
+.polaroid img {
+  width: 600px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.polaroid p {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* gallery buttons buttons */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.prev { left: -50px; }
+.next { right: -50px; }
