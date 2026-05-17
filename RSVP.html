@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <!-- EmailJS — THIS was the missing line causing the crash -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
@@ -29,6 +29,12 @@
       --rsvp-radius-lg:   8px;
     }
 
+    /* FIX: prevent horizontal overflow on html and body */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -45,7 +51,8 @@
     .site-header {
       background: #ffffff;
       border-bottom: 1px solid rgba(0,0,0,0.08);
-      position: sticky; top: 0;
+      position: sticky;
+      top: 0;
       z-index: 100;
     }
     .header-inner {
@@ -62,7 +69,13 @@
       letter-spacing: 0.5px;
       text-align: center;
     }
-    .nav { display: flex; justify-content: center; gap: 24px; }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
     .nav a { text-decoration: none; font-size: 14px; color: #2f2f2f; }
     .nav a:hover { opacity: 0.6; }
 
@@ -274,7 +287,12 @@
 
     /* footer */
     footer { background: var(--rsvp-white); border-bottom: 1px solid rgba(0,0,0,0.08); }
-    footer p { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px 0; }
+    footer p { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px 0; font-size: 14px; }
+
+    /* FIX: footer font smaller on mobile */
+    @media (max-width: 600px) {
+      footer p { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -381,7 +399,6 @@
 </footer>
 
 <script>
-  // EmailJS init — requires the CDN script tag above to be loaded first
   emailjs.init('9ZWitdmsKI1vrP-vG');
 
   const EMAILJS_SERVICE_ID  = 'service_uzxyf5v';
