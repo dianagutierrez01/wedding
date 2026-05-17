@@ -129,7 +129,7 @@
     .rsvp-step.active { display: block; }
 
     /* search */
-    .rsvp-search-wrap { position: relative; }
+    .rsvp-search-wrap { position: relative; width: 100%; }
     .rsvp-search-wrap svg {
       position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
       width: 16px; height: 16px; stroke: var(--rsvp-light); fill: none;
@@ -137,6 +137,7 @@
     }
     .rsvp-search-input {
       width: 100%;
+      box-sizing: border-box;
       padding: 14px 14px 14px 44px;
       font-family: 'Inter', sans-serif;
       font-size: 1rem; font-weight: 300;
