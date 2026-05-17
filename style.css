@@ -3,20 +3,25 @@
   --h1: 40px;
   --h2: 26px;
   --h3: 20px;
-
+ 
   --body: 20px;
   --small: 14px;
-
+ 
   --line: 1.6;
 }
-
+ 
 /* setting reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+ 
 body {
   font-family: "Georgia", serif;
   font-size: var(--body);
@@ -24,8 +29,7 @@ body {
   color: #2f2f2f;
   background: #f8f7f4;
 }
-
-
+ 
 .container {
   display: flex;
   flex-direction: column;
@@ -37,14 +41,16 @@ body {
   padding: 0 24px;
   justify-content: center;
 }
-
-/* header starts here */
+ 
+/* ── HEADER ─────────────────────────────────────────── */
 .site-header {
   background: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,0.08);
-  position: sticky; top: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-
+ 
 .header-inner {
   display: flex;
   flex-direction: column;
@@ -53,33 +59,32 @@ body {
   gap: 8px;
   padding: 16px 0;
 }
-
-/* name */
+ 
 .top-name {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   letter-spacing: 0.5px;
   text-align: center;
 }
-
-/* nav centered under name */
+ 
 .nav {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;           /* prevents nav overflow on small screens */
+  gap: 12px 24px;
 }
-
+ 
 .nav a {
   text-decoration: none;
   font-size: var(--small);
   color: #2f2f2f;
 }
-
+ 
 .nav a:hover {
   opacity: 0.6;
 }
-
-/* hero starts here */
+ 
+/* ── HERO ────────────────────────────────────────────── */
 .hero {
   min-height: calc(100vh - 72px);
   display: flex;
@@ -88,38 +93,39 @@ body {
   justify-content: center;
   text-align: center;
   background-color: #7a8468;
+  padding: 32px 16px;        /* side padding so content never touches edge */
 }
-
+ 
 .hero-content {
+  width: 100%;
   max-width: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-
+ 
+/* FIX: was fixed 480px — now scales down on mobile */
 .hero-logo {
-  width: 480px;
+  width: 100%;
+  max-width: 480px;
   height: auto;
-  /*margin-bottom: 16px;*/
 }
-
+ 
 .date {
   font-family: 'Playfair Display', serif;
   font-size: var(--h2);
 }
-
+ 
 .location {
   color: #ffffff;
 }
-
+ 
 .countdown {
   margin-top: 8px;
   margin-bottom: 16px;
-  
 }
-
-/* buttons start here */
+ 
+/* ── BUTTONS ─────────────────────────────────────────── */
 .rsvp-btn {
   padding: 12px 28px;
   border-radius: 999px;
@@ -128,44 +134,43 @@ body {
   text-decoration: none;
   font-size: var(--small);
 }
-
-/* sections start here */
+ 
+/* ── SECTIONS ────────────────────────────────────────── */
 section {
   padding: 32px 0;
 }
-
-/* welcome starts here */
+ 
+/* ── WELCOME ─────────────────────────────────────────── */
 .intro {
   background: var(--white);
   text-align: center;
   gap: 100px;
   display: flex;
 }
-
+ 
 .intro h2 {
   font-family: 'Playfair Display', serif;
   font-size: var(--h2);
   margin-bottom: 16px;
 }
-
+ 
 .intro p {
   max-width: 520px;
   margin: 0 auto;
   color: #6f6f6f;
-  
 }
-
-/* sched starts here */
+ 
+/* ── SCHEDULE ────────────────────────────────────────── */
 #schedule {
   text-align: center;
 }
-
+ 
 #schedule h2 {
   font-family: 'Playfair Display', serif;
   font-size: var(--h2);
   margin-bottom: 48px;
 }
-
+ 
 .timeline {
   max-width: 520px;
   margin: 0 auto;
@@ -173,54 +178,54 @@ section {
   flex-direction: column;
   gap: 32px;
 }
-
+ 
 .event {
   display: grid;
   grid-template-columns: 100px 1fr;
   align-items: start;
   text-align: left;
 }
-
+ 
 .time {
   font-weight: 500;
   color: #7a8468;
 }
-
+ 
 .event h3 {
   font-size: var(--h3);
   margin-bottom: 4px;
 }
-
-/* q&a starts here*/
+ 
+/* ── Q&A ─────────────────────────────────────────────── */
 #qa {
   background: var(--white);
   text-align: center;
 }
-
+ 
 #qa h2 {
   font-family: 'Playfair Display', serif;
   font-size: var(--h2);
 }
-
+ 
 .qa-grid {
   display: grid;
-  grid-template-rows: repeat(4);
+  grid-template-rows: repeat(4, auto);
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
-
+ 
 .qa-item h3 {
   font-size: var(--h3);
 }
-
-/* rsvp starts here */
+ 
+/* ── RSVP SECTION ────────────────────────────────────── */
 #rsvp-section {
   background: #7a8468;
   color: white;
   text-align: center;
 }
-
+ 
 .container-rsvp-box {
   display: flex;
   flex-direction: column;
@@ -228,25 +233,24 @@ section {
   gap: 16px;
   border: white 5em;
 }
-
+ 
 .rsvp-box h2 {
   font-family: 'Playfair Display', serif;
   font-size: var(--h2);
 }
-
+ 
 .rsvp-btn.large {
   background: white;
   color: #7a8468;
   padding: 14px 36px;
 }
-
-
-/* footer starts here */
+ 
+/* ── FOOTER ──────────────────────────────────────────── */
 footer {
   background: var(--white);
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
-
+ 
 footer p {
   display: flex;
   flex-direction: column;
@@ -255,41 +259,46 @@ footer p {
   gap: 8px;
   padding: 16px 0;
 }
-
-
-/*gallery starts here */
+ 
+/* ── POLAROID GALLERY ────────────────────────────────── */
 .polaroid-gallery {
   position: relative;
+  width: 100%;
   max-width: 620px;
   margin: 60px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 48px;           /* room for prev/next buttons */
 }
-
+ 
+/* FIX: was fixed 700px — now fluid */
 .polaroid {
   background: white;
   padding: 12px 12px 24px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   border-radius: 4px;
   text-align: center;
-  width: 700px;
+  width: 100%;               /* fills available space */
+  max-width: 700px;
 }
-
+ 
+/* FIX: was fixed 600px — now fluid */
 .polaroid img {
-  width: 600px;
-  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  height: auto;              /* preserves aspect ratio */
   object-fit: cover;
   border-radius: 2px;
 }
-
+ 
 .polaroid p {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   margin-top: 10px;
 }
-
-/* gallery buttons buttons */
+ 
+/* Gallery nav buttons */
 .btn {
   position: absolute;
   top: 50%;
@@ -300,20 +309,23 @@ footer p {
   padding: 10px 14px;
   cursor: pointer;
   font-size: 18px;
+  border-radius: 4px;
+  z-index: 1;
 }
-
-.prev { left: -50px; }
-.next { right: -50px; }
-
-/* ICON PHOTO SECTION (circles with text underneath) */
+ 
+/* FIX: bring buttons inside viewport on mobile */
+.prev { left: 0; }
+.next { right: 0; }
+ 
+/* ── ICON PHOTO SECTION ──────────────────────────────── */
 .icon-photo {
   display: flex;
   justify-content: center;
   gap: 40px;
   margin-top: 24px;
-  flex-wrap: wrap; /* makes it responsive on mobile */
+  flex-wrap: wrap;
 }
-
+ 
 .icon-item {
   display: flex;
   flex-direction: column;
@@ -321,54 +333,84 @@ footer p {
   text-align: center;
   max-width: 200px;
 }
-
+ 
 .icon-item img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
-
+ 
 .icon-item p {
   margin-top: 12px;
   font-family: 'Playfair Display', serif;
   font-size: 16px;
   color: #6f6f6f;
 }
-
-/* style for phones 600px or smaller */
+ 
+/* ── MEDIA QUERIES ───────────────────────────────────── */
+ 
+/* Tablets and small screens (≤ 768px) */
+@media only screen and (max-width: 768px) {
+  .polaroid-gallery {
+    margin: 32px auto;
+    padding: 0 40px;
+  }
+}
+ 
+/* Phones (≤ 600px) */
 @media only screen and (max-width: 600px) {
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
   body {
-  font-family: "Georgia", serif;
-  font-size: 20px;
-  line-height: var(--line);
-  color: #2f2f2f;
-  background: #f8f7f4;
+    font-size: 20px;
   }
-footer p {
-  font-size: 12px;
+ 
+  footer p {
+    font-size: 12px;
+  }
+ 
+  /* Stack event rows so time sits above description */
+  .event {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+ 
+  /* Tighten up gallery padding for phones */
+  .polaroid-gallery {
+    padding: 0 36px;
+    margin: 24px auto;
+  }
+ 
+  .polaroid {
+    padding: 8px 8px 20px;
+  }
+ 
+  /* Shrink icon circles on small screens */
+  .icon-item img {
+    width: 140px;
+    height: 140px;
+  }
 }
-}
-/* style for phones 400px or smaller */
+ 
+/* Very small phones (≤ 400px) */
 @media only screen and (max-width: 400px) {
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  } 
   body {
-  font-family: "Georgia", serif;
-  font-size: var(--small);
-  line-height: var(--line);
-  color: #2f2f2f;
-  background: #f8f7f4;
+    font-size: var(--small);
   }
-footer p {
-  font-size: 12px;
-}
+ 
+  footer p {
+    font-size: 12px;
+  }
+ 
+  .polaroid-gallery {
+    padding: 0 32px;
+  }
+ 
+  .icon-item img {
+    width: 110px;
+    height: 110px;
+  }
+ 
+  .icon-photo {
+    gap: 24px;
+  }
 }
