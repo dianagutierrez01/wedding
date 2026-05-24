@@ -39,9 +39,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // gallery photos
 //create index with photos for gallery
 const images = [
-  { src: "photo-1.jpg"},
-  { src: "photo-2.jpg"},
-  { src: "photo-6.jpg"},
+  { src: "photo-1.jpg", alt: "man and woman smile walking down a suspension bridge, woman smiling at camera, man smiling at her"},
+  { src: "photo-2.jpg", alt: "man and woman are sitting on park stairs, man is sitting behind her, they sit in admiration of each other"},
+  { src: "photo-6.jpg", alt: "man gives woman kiss on the cheek, her eyes are closed "},
 ];
 
 //initialize start variable before use
