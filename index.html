@@ -13,11 +13,11 @@
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
+<header class="site-header" aria-label="Main Menu">
   <div class="container header-inner">
     <h1 class="top-name">Diana & Michael</h1>
     
-    <nav class="nav">
+    <nav class="nav" aria-label="site navigation">
       <a href="index.html">Home</a>
       <a href="index.html#schedule">Schedule</a>
       <a href="index.html#qa">Q&A</a>
@@ -29,22 +29,22 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" aria-label="green website homepage">
   <div class="hero-content">
-    <img src="weblogo.png" alt="wedding Logo" class="hero-logo">
+    <img src="weblogo.png" alt="white DM monogram inside of a an oval with a bow on top" class="hero-logo">
 
-    <h2 class="date">Saturday, September 5, 2026</h2>
-    <p class="location"> FruitCraft</p>
-    <p class="location">1477 University Ave, San Diego, CA 92103</p>
+    <h2 class="date" aria-label="date">Saturday, September 5, 2026</h2>
+    <p class="location" aria-label="venue name"> FruitCraft</p>
+    <p class="location aria-label="venue address"">1477 University Ave, San Diego, CA 92103</p>
 
-    <p class="countdown" id="countdown"></p>
+    <p class="countdown" id="countdown" aria-label="countdown to wedding day"></p>
 
-    <a href="RSVP.html" class="rsvp-btn">RSVP</a>
+    <a href="RSVP.html" class="rsvp-btn" aria-label="button">RSVP</a>
   </div>
 </section>
 
-<!-- SECOND SECTION (matches typical wireframe block) -->
-<section class="intro">
+<!-- WELCOME SECTION-->
+<section class="intro" aria-label="welcome message section">
   <div class="container intro-content">
     <h2>Welcome</h2>
     <p>
@@ -55,11 +55,11 @@
 </section>
 
 <!-- SCHEDULE SECTION -->
-<section id="schedule">
+<section id="schedule" aria-labelledby="schedule section">
   <div class="container">
     <h2>Schedule</h2>
 
-    <div class="timeline">
+    <div class="timeline" aria-labelledby="timeline section">
       <div class="event">
         <span class="time">5:00 PM</span>
         <div>
@@ -116,7 +116,7 @@
 
 
 <!-- Q&A SECTION -->
-<section id="qa">
+<section id="qa" aria-labelledby="qa">
   <div class="container">
     <h2>Q & A</h2>
 
@@ -151,12 +151,12 @@
 
 
 <!-- RSVP SECTION -->
-<section id="rsvp-section">
+<section id="rsvp-section" aria-labelledby="rsvp-section">
 
     <h2>Will You Be Attending?</h2>
     <p>Kindly let us know by June 15, 2026.</p></br>
 
-    <a href="RSVP.html" class="rsvp-btn large">RSVP</a>
+    <a href="RSVP.html" class="rsvp-btn large" aria-label="button">RSVP</a>
   </div>
   </div>
 </section>
@@ -164,7 +164,7 @@
 <script src="script.js"></script>
 </body>
 
-<footer>
+<footer aria-label="footer">
   <p>diana & michael // september 05, 2026 // san diego, ca</p>
 </footer>
 </html>
